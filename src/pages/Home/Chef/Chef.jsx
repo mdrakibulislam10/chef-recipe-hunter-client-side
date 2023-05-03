@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Chef = ({ chef }) => {
     console.log(chef);
-    const { chef_picture, chef_name, short_bio, years_of_experience, recipe_info, likes } = chef;
+    const { chef_picture, chef_name, years_of_experience, recipe_info, likes } = chef;
 
     return (
         <div className='p-2'>
@@ -12,7 +12,7 @@ const Chef = ({ chef }) => {
                 <Card.Img className='rounded-circle mx-auto img-fluid' variant="top" src={chef_picture} style={{ height: "200px", width: "200px" }} />
                 <Card.Body>
                     <Card.Title className='text-center mb-5'><b>{chef_name}</b></Card.Title>
-                    <Card.Text>
+                    <div>
                         <p className='text-secondary d-flex justify-content-between align-items-center flex-wrap px-3'>
                             <span>
                                 Experience: <b>{years_of_experience}yr.</b>
@@ -26,11 +26,11 @@ const Chef = ({ chef }) => {
                             <span>
                                 Likes: <b>{likes}</b>
                             </span>
-                            <Button variant="warning">View Recipes
+                            <Button variant="warning" style={{ fontWeight: "500" }}>View Recipes
                                 <FaArrowRight className='ms-1' />
                             </Button>
                         </p>
-                    </Card.Text>
+                    </div>
                 </Card.Body>
             </Card>
         </div>
