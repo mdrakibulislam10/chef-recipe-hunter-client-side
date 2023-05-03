@@ -4,7 +4,7 @@ import { FaStickyNote } from 'react-icons/fa';
 
 const RecipeTutorial = ({ tutorial }) => {
     const { recipe_name, recipe_img, recipe_tutorial } = tutorial;
-    console.log(tutorial);
+    // console.log(tutorial);
 
     const [isTruthy, setIsTruthy] = useState(false);
 
@@ -15,8 +15,8 @@ const RecipeTutorial = ({ tutorial }) => {
                     <Card.Img className='mx-auto img-fluid rounded' variant="top" src={recipe_img} style={{ height: "200px" }} />
                 </div>
 
-                <Card.Body className='d-flex align-items-center justify-content-between'>
-                    <Card.Title className='fs-4'><b>{recipe_name}</b></Card.Title>
+                <Card.Body className='d-flex flex-wrap align-items-center justify-content-between'>
+                    <Card.Title className='fs-5'><b>{recipe_name}</b></Card.Title>
                     <button onClick={() => setIsTruthy(!isTruthy)} className='btn btn-outline-secondary' style={{ fontWeight: "500" }}>
                         {isTruthy ? "Hide" : "Show"} Tutorials
                         <FaStickyNote className='ms-1' />

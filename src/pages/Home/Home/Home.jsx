@@ -4,6 +4,7 @@ import Chef from '../Chef/Chef';
 import { useLoaderData } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 import RecipeTutorials from '../RecipeTutorialsContainer/RecipeTutorials/RecipeTutorials';
+import BooksRecommend from '../BooksRecommendContainer/BooksRecommend/BooksRecommend';
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -32,9 +33,8 @@ const Home = () => {
                 <RecipeTutorials />
             </div>
 
-            <div className='container my-5'>
-
-                Recipe Book Shop" purchase
+            <div className='container'>
+                <BooksRecommend />
             </div>
         </>
     );
