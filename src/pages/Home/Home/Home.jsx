@@ -32,8 +32,10 @@ const Home = () => {
                 <RecipeTutorials />
             </div>
 
+            <div className='container my-5'>
 
-            Recipe Book Shop" purchase
+                Recipe Book Shop" purchase
+            </div>
         </>
     );
 };
