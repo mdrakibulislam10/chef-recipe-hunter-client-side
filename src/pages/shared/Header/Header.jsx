@@ -11,7 +11,7 @@ const Header = () => {
             <Navbar bg="" variant="" className='d-flex flex-column flex-md-row justify-content-around align-items-center'>
                 <h1 onClick={() => navigate("/")} className='text-info fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
 
-                <Nav className="d-flex gap-5 align-items-center fw-bold">
+                <Nav className="d-flex gap-3 gap-md-5 align-items-center justify-content-center fw-bold flex-wrap">
                     <ActiveLink to={"/"}>Home</ActiveLink>
                     <ActiveLink to={"/blog"}>Blog</ActiveLink>
 

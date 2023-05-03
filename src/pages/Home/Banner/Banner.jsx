@@ -3,51 +3,49 @@ import { Carousel } from 'react-bootstrap';
 import banner1 from "../../../../public/img/banner1.avif";
 import banner2 from "../../../../public/img/banner2.jpg";
 import banner3 from "../../../../public/img/banner3.jpg";
+import "./Banner.css";
 
 const Banner = () => {
     return (
         <Carousel className=''>
             <Carousel.Item>
                 <img
-                    style={{ height: "600px" }}
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={banner2}
                     alt="First slide"
                 />
-                <Carousel.Caption className='mb-5'>
-                    <h1 className='text-info'>A Culinary Journey through Japanese Cuisine</h1>
-                    <h5 className='text-secondary my-4'>Explore the exquisite world of traditional Japanese sushi with our fresh, handcrafted rolls and sashimi delights.</h5>
-                    <button className='btn btn-warning' style={{ fontWeight: "500" }}><a href='#chef'>View our chef and recipe</a></button>
+                <Carousel.Caption className=''>
+                    <h2 className='text-info'>A Culinary Journey through Japanese Cuisine</h2>
+                    <p className='text-secondary my-4' style={{ fontSize: "18px" }}>Explore the exquisite world of traditional Japanese sushi with our fresh, handcrafted rolls and sashimi delights.</p>
+                    <button className='btn btn-warning'><a style={{ fontWeight: "500", textDecoration: "none" }} className='text-black' href='#chef'>Explore Chef and Recipe</a></button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    style={{ height: "600px" }}
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={banner1}
                     alt="Second slide"
                 />
 
-                <Carousel.Caption className='mb-5'>
-                    <h1 className='text-info'>A Journey into Exquisite Culinary Traditions</h1>
-                    <h5 className='text-secondary my-4'>Experience the vibrant and soothing flavors of matcha tea with our premium powders and discover the ancient art of the Japanese tea ceremony.</h5>
-                    <button className='btn btn-warning' style={{ fontWeight: "500" }}><a href='#chef'>View our chef and recipe</a></button>
+                <Carousel.Caption className=''>
+                    <h2 className='text-info'>A Journey into Exquisite Culinary Traditions</h2>
+                    <p className='text-secondary my-4' style={{ fontSize: "18px" }}>Experience the vibrant and soothing flavors of matcha tea with our premium powders and discover the ancient art of the Japanese tea ceremony.</p>
+                    <button className='btn btn-warning'><a style={{ fontWeight: "500", textDecoration: "none" }} className='text-black' href='#chef'>Explore Chef and Recipe</a></button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    style={{ height: "600px" }}
-                    className="d-block w-100"
+                    className="d-block w-100 custom-height"
                     src={banner3}
                     alt="Third slide"
                 />
 
-                <Carousel.Caption className='mb-5'>
-                    <h1 className='text-info'>Discover Authentic Japanese Food</h1>
-                    <h5 className='text-secondary my-4'>
+                <Carousel.Caption className=''>
+                    <h2 className='text-info'>Discover Authentic Japanese Food</h2>
+                    <p className='text-secondary my-4' style={{ fontSize: "18px" }}>
                         Dive into a bowl of authentic ramen, filled with flavorful broths, springy noodles, and mouthwatering toppings at RamenRealm.
-                    </h5>
-                    <button className='btn btn-warning' style={{ fontWeight: "500" }}><a href='#chef'>View our chef and recipe</a></button>
+                    </p>
+                    <button className='btn btn-warning'><a style={{ fontWeight: "500", textDecoration: "none" }} className='text-black' href='#chef'>Explore Chef and Recipe</a></button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

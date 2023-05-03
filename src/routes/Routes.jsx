@@ -10,7 +10,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: <Home />,
+                loader: async () => fetch("https://chef-recipe-hunter-server-side-topaz.vercel.app/chef-recipe"),
             },
             {
                 path: "/blog",

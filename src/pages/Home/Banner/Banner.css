@@ -1,0 +1,9 @@
+.custom-height {
+    height: 600px;
+}
+
+@media only screen and (max-width: 800px) {
+    .custom-height {
+        height: 500px;
+    }
+}
