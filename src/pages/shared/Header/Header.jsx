@@ -8,14 +8,15 @@ const Header = () => {
 
     return (
         <header>
-            <Navbar bg="" variant="" className='d-flex justify-content-around align-items-center'>
-                <h1 onClick={() => navigate("/")} className='text-warning fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
+            <Navbar bg="" variant="" className='d-flex flex-column flex-md-row justify-content-around align-items-center'>
+                <h1 onClick={() => navigate("/")} className='text-info fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
 
-                <Nav className="d-flex gap-5 align-items-center">
+                <Nav className="d-flex gap-5 align-items-center fw-bold">
                     <ActiveLink to={"/"}>Home</ActiveLink>
                     <ActiveLink to={"/blog"}>Blog</ActiveLink>
 
                     <Image src="holder.js/171x180" roundedCircle />
+                    <button className='btn btn-warning fw-bold'>Login</button>
                 </Nav>
             </Navbar>
         </header>
