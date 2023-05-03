@@ -15,7 +15,7 @@ const RecipeTutorials = () => {
     return (
         <>
             <h2 className='text-info border-start border-4 border-secondary ps-1'>Recipe Tutorials</h2>
-            <p>Watch our recipe videos, learn and try recipe at your kitchen</p>
+            <p>Read our recipe tutorial, learn and try recipe at your kitchen</p>
 
             <Row xs={1} md={2} lg={3} className='gy-2 g-md-3'>
                 {

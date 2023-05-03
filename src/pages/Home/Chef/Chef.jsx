@@ -3,8 +3,8 @@ import { Button, Card } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
 
 const Chef = ({ chef }) => {
-    console.log(chef);
     const { chef_picture, chef_name, years_of_experience, recipe_info, likes } = chef;
+    // console.log(chef);
 
     return (
         <div className='p-2'>
