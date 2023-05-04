@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import swal from 'sweetalert';
 
 const SignUp = () => {
     const { signUp } = useContext(AuthContext);
