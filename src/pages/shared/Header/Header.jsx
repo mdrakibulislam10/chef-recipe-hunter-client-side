@@ -16,7 +16,7 @@ const Header = () => {
                     <ActiveLink to={"/blog"}>Blog</ActiveLink>
 
                     <Image src="holder.js/171x180" roundedCircle />
-                    <button className='btn btn-warning fw-bold'>Login</button>
+                    <button onClick={() => navigate("/user")} className='btn btn-warning fw-bold'>Login</button>
                 </Nav>
             </Navbar>
         </header>
