@@ -1,0 +1,32 @@
+.custom-chef-img-size {
+    width: 400px;
+    height: 400px;
+}
+
+@media only screen and (max-width: 750px) {
+    .custom-chef-img-size {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .custom-chef-img-size {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .custom-chef-img-size {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 265px) {
+    .custom-chef-img-size {
+        width: 150px;
+        height: 150px;
+    }
+}

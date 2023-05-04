@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
-    const { chef_picture, chef_name, years_of_experience, recipe_info, likes } = chef;
+    const { id, chef_picture, chef_name, years_of_experience, recipe_info, likes } = chef;
     // console.log(chef);
+
+    const navigate = useNavigate();
 
     return (
         <div className='p-2'>
@@ -26,7 +29,7 @@ const Chef = ({ chef }) => {
                             <span>
                                 Likes: <b>{likes}</b>
                             </span>
-                            <Button variant="warning" style={{ fontWeight: "500" }}>View Recipes
+                            <Button onClick={() => navigate(`/recipes/${id}`)} variant="warning" style={{ fontWeight: "500" }}>View Recipes
                                 <FaArrowRight className='ms-1' />
                             </Button>
                         </p>
