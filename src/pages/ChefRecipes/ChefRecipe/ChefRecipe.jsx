@@ -25,10 +25,10 @@ const ChefRecipe = ({ recipe }) => {
                 <div className='px-2'>
                     <h4 className=''>Recipe Name: <b>{recipe_name}</b></h4>
                     <div className='d-flex flex-wrap justify-content-between align-items-center'>
-                        <p className='d-flex flex-wrap'><span>Ratings:</span>
+                        <div className='d-flex flex-wrap'><span>Ratings:</span>
                             <Rating className='mx-1' style={{ maxWidth: 100 }} readOnly value={rating} />
                             <b>{rating}</b>
-                        </p>
+                        </div>
 
                         <button onClick={() => handleToast(true)} className='btn btn-warning' disabled={isDisabled} style={{ fontWeight: "500" }}>Favorite</button>
                         <Toaster />

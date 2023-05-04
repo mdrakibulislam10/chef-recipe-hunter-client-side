@@ -8,7 +8,6 @@ import BooksRecommend from '../BooksRecommendContainer/BooksRecommend/BooksRecom
 
 const Home = () => {
     const chefs = useLoaderData();
-    // console.log(chefs);
 
     return (
         <>

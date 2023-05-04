@@ -1,12 +1,17 @@
 import React from 'react';
 import Header from '../pages/shared/Header/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from "../pages/shared/Footer/Footer";
 
 const Main = () => {
+
+    // const navigation = useNavigation();
+    // console.log(navigation);
+
     return (
         <div>
             <Header />
+            {/* {navigation.state === "loading" ? "loading..." : ""} */}
 
             <Outlet />
 

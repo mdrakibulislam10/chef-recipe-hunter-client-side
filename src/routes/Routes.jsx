@@ -4,11 +4,13 @@ import Home from "../pages/Home/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import RecipesPage from "../layouts/RecipesPage";
 import ChefRecipes from "../pages/ChefRecipes/ChefRecipes/ChefRecipes";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
     {
         path: "/recipes/:id",
         element: <RecipesPage />,
+        // errorElement: <ErrorPage />,
         children: [
             {
                 path: "/recipes/:id",
