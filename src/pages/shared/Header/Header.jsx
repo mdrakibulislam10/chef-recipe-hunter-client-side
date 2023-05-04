@@ -29,7 +29,8 @@ const Header = () => {
                 <h1 onClick={() => navigate("/")} className='text-info fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
 
                 <Nav className="d-flex gap-3 gap-md-5 align-items-center justify-content-center fw-bold flex-wrap">
-                    <ActiveLink to={"/"}>Home</ActiveLink>
+                    {/* replace slash(/) route with /home route for Link Active */}
+                    <ActiveLink to={"/home"}>Home</ActiveLink>
                     <ActiveLink to={"/blog"}>Blog</ActiveLink>
 
                     {
