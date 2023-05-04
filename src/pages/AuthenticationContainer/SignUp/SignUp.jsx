@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
     const { signUp } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -25,6 +26,9 @@ const SignUp = () => {
 
                 form.reset();
                 swal("Sign-up Successful", "Thanks for connect with us", "success");
+
+                // redirect to home page
+                navigate("/", { replace: true });
             })
             .catch(err => {
                 // console.log(err.message);

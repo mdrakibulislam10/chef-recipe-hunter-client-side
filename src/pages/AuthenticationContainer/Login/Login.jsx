@@ -1,12 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "./Login.css";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 
 const Login = () => {
     const { signIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+
+    const from = location?.state?.from?.pathname || "/";
 
     const handleLogin = e => {
         e.preventDefault();
@@ -23,12 +29,14 @@ const Login = () => {
                 form.reset();
                 swal("Login Successful", "You can explore recipe page now", "success");
 
+                // redirect to right page
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err.message);
                 swal({
                     title: err.message,
-                    text: "Please try again",
+                    text: "Please try again or create a new account",
                     icon: "warning",
                     // buttons: true,
                     dangerMode: true,
@@ -42,12 +50,15 @@ const Login = () => {
             .then(result => {
                 // console.log(result.user);
                 swal("Login Successful", "You can explore recipe page now", "success");
+
+                // redirect to right page
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err.message);
                 swal({
                     title: err.message,
-                    text: "Please try again",
+                    text: "Please try again or create a new account",
                     icon: "warning",
                     // buttons: true,
                     dangerMode: true,
@@ -61,12 +72,15 @@ const Login = () => {
             .then(result => {
                 // console.log(result.user);
                 swal("Login Successful", "You can explore recipe page now", "success");
+
+                // redirect to right page
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err.message);
                 swal({
                     title: err.message,
-                    text: "Please try again",
+                    text: "Please try again or create a new account",
                     icon: "warning",
                     // buttons: true,
                     dangerMode: true,
