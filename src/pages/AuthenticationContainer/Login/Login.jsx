@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -20,6 +20,17 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 form.reset();
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+    };
+
+    // google sign in
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
             })
             .catch(err => {
                 console.log(err.message);
@@ -53,7 +64,7 @@ const Login = () => {
                 {/* <hr className='w-75 mx-auto' /> */}
 
                 <div>
-                    <Button className='w-100 mb-3' variant="outline-primary">Google Sign-in</Button>
+                    <Button onClick={handleGoogleSignIn} className='w-100 mb-3' variant="outline-primary">Google Sign-in</Button>
                     <Button className='w-100' variant="outline-primary">GitHub Sign-in</Button>
                 </div>
             </div>
