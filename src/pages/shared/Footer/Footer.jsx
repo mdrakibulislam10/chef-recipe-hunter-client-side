@@ -21,6 +21,7 @@ const Footer = () => {
                 <h4 className="my-3"><b>EXPLORE</b></h4>
                 <Link className='text-warning' style={{ textDecoration: "none" }} to={"/"}>Go Homepage</Link>
                 <Link className='text-warning' style={{ textDecoration: "none" }} to={"/blog"}>Go Blog page</Link>
+                <p className='mt-3'>&copy; 2023 Recipe Haven</p>
             </div>
         </footer>
     );
