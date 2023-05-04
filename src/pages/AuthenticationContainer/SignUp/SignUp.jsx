@@ -21,9 +21,17 @@ const SignUp = () => {
             .then(result => {
                 console.log(result.user);
                 form.reset();
+                swal("Sign-up Successful", "Thanks for connect with us", "success");
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
+                swal({
+                    title: err.message,
+                    text: "Please try again",
+                    icon: "warning",
+                    // buttons: true,
+                    dangerMode: true,
+                })
             });
     };
 

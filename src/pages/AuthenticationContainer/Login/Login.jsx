@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "./Login.css";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
+import swal from 'sweetalert';
 
 const Login = () => {
     const { signIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
@@ -18,11 +19,20 @@ const Login = () => {
         // sign in
         signIn(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 form.reset();
+                swal("Login Successful", "You can explore recipe page now", "success");
+
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
+                swal({
+                    title: err.message,
+                    text: "Please try again",
+                    icon: "warning",
+                    // buttons: true,
+                    dangerMode: true,
+                })
             });
     };
 
@@ -30,10 +40,18 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
+                swal("Login Successful", "You can explore recipe page now", "success");
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
+                swal({
+                    title: err.message,
+                    text: "Please try again",
+                    icon: "warning",
+                    // buttons: true,
+                    dangerMode: true,
+                })
             });
     };
 
@@ -41,10 +59,18 @@ const Login = () => {
     const handleGitHubSignIn = () => {
         gitHubSignIn()
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
+                swal("Login Successful", "You can explore recipe page now", "success");
             })
             .catch(err => {
-                console.log(err.message);
+                // console.log(err.message);
+                swal({
+                    title: err.message,
+                    text: "Please try again",
+                    icon: "warning",
+                    // buttons: true,
+                    dangerMode: true,
+                })
             });
     };
 
