@@ -41,7 +41,7 @@ const ChefRecipe = ({ recipe }) => {
                         <div>
                             <h5>Ingredients:</h5>
                             {
-                                ingredients.map((items, id) =>
+                                ingredients?.map((items, id) =>
                                     <p key={id}>
                                         {id + 1}. {items}
                                     </p>
@@ -52,7 +52,7 @@ const ChefRecipe = ({ recipe }) => {
                         <div>
                             <h5>Cooking Method:</h5>
                             {
-                                cooking_method.map((items, id) =>
+                                cooking_method?.map((items, id) =>
                                     <p key={id}>
                                         {id + 1}. {items}
                                     </p>

@@ -30,7 +30,7 @@ const RecipeTutorial = ({ tutorial }) => {
                         <div className='pb-2 px-3'>
                             <h5>Steps:</h5>
                             {
-                                recipe_tutorial.steps.map((step, id) =>
+                                recipe_tutorial?.steps?.map((step, id) =>
                                     <li key={id}>{step}</li>
                                 )
                             }
@@ -39,7 +39,7 @@ const RecipeTutorial = ({ tutorial }) => {
                         <div className='px-3 pb-3'>
                             <h5>Tips:</h5>
                             {
-                                recipe_tutorial.tips.map((tip, id) =>
+                                recipe_tutorial?.tips?.map((tip, id) =>
                                     <li key={id}>{tip}</li>
                                 )
                             }

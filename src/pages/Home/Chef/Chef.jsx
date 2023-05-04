@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
-    const { id, chef_picture, chef_name, years_of_experience, recipe_info, likes } = chef;
+    const { id, chef_picture, chef_name, years_of_experience, numbers_of_recipes, likes } = chef;
     // console.log(chef);
 
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Chef = ({ chef }) => {
                                 Experience: <b>{years_of_experience}yr.</b>
                             </span>
                             <span>
-                                Total Recipes: <b>{recipe_info.length}</b>
+                                Total Recipes: <b>{numbers_of_recipes}</b>
                             </span>
                         </p>
 

@@ -20,7 +20,12 @@ const Login = () => {
 
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
+
+        if (password.length < 6) {
+            swal("Password length at least 6 characters");
+            return;
+        };
 
         // sign in
         signIn(email, password)

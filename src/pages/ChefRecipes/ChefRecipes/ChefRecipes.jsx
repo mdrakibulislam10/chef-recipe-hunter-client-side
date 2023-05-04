@@ -7,7 +7,7 @@ import { FaThumbsUp } from 'react-icons/fa';
 const ChefRecipes = () => {
     const chef = useLoaderData();
     // console.log(chef.recipe_info);
-    const { recipe_info, chef_picture, chef_name, short_bio, years_of_experience, likes, profession } = chef;
+    const { recipe_info, chef_picture, chef_name, short_bio, years_of_experience, numbers_of_recipes, likes, profession } = chef;
 
     return (
         <section>
@@ -23,7 +23,7 @@ const ChefRecipes = () => {
                             <span className='me-2'>Likes: {likes}</span>
                             <FaThumbsUp className='fs-5' style={{ cursor: "pointer" }} />
                         </h6>
-                        <h6>Total Recipe: {recipe_info.length}</h6>
+                        <h6>Total Recipe: {numbers_of_recipes}</h6>
                         <h6>Experience: {years_of_experience} year</h6>
                     </Col>
 
@@ -39,7 +39,7 @@ const ChefRecipes = () => {
                 <p>See all recipes by <b>{chef_name}</b>, you can try your kitchen.</p>
                 <Row xs={1} lg={2} className=''>
                     {
-                        recipe_info.map(recipe =>
+                        recipe_info?.map(recipe =>
                             <ChefRecipe
                                 key={recipe.id}
                                 recipe={recipe}

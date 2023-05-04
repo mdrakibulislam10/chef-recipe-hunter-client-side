@@ -19,6 +19,11 @@ const SignUp = () => {
         const password = form.password.value;
         // console.log(email, password);
 
+        if (password.length < 6) {
+            swal("Password length at least 6 characters");
+            return;
+        };
+
         // sign up
         signUp(email, password)
             .then(result => {
