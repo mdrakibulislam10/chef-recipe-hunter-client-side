@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import Header from '../pages/shared/Header/Header';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigation } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
+
 
 const RecipesPage = () => {
     const location = useLocation();
     const mapSectionRef = useRef();
-
     // console.log(location.pathname);
+
     // after redirect auto scroll to go page top
     useEffect(() => {
         if (location.pathname) {
@@ -17,12 +19,16 @@ const RecipesPage = () => {
         }
     }, []);
 
+    const navigation = useNavigation();
+
     return (
         <section ref={mapSectionRef}>
             {/* <div ref={mapSectionRef}> */}
-            <div>
-                <Header />
-            </div>
+
+            <Header />
+            {navigation.state === "loading"
+                ? <Spinner className='mx-auto d-block mt-4 mb-5' animation="border" variant="warning" />
+                : ""}
 
             <Outlet />
         </section>
