@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import "./BookRecommend.css";
 
 const BookRecommend = ({ book }) => {
     const { book_img, book_name, sold_worldwide, rating } = book;
 
     return (
         <div>
-            <Card className='' style={{ height: "630px" }}>
+            <Card className='custom-book-card-height'>
                 <div className='p-3'>
                     <Card.Img className='mx-auto img-fluid rounded' variant="top" src={book_img} style={{ height: "400px" }} />
                 </div>

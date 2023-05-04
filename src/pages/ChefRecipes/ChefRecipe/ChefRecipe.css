@@ -1,0 +1,5 @@
+@media only screen and (min-width: 995px) {
+    .custom-height-recipe-info {
+        height: 370px;
+    }
+}

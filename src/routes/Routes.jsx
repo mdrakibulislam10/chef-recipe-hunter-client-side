@@ -8,6 +8,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import AuthenticationPage from "../layouts/AuthenticationPage";
 import Login from "../pages/AuthenticationContainer/Login/Login";
 import SignUp from "../pages/AuthenticationContainer/SignUp/SignUp";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                element: <Navigate to={"/home"} replace={true} />
+            },
+            {
+                path: "/home",
                 element: <Home />,
                 loader: async () => fetch("https://chef-recipe-hunter-server-side-topaz.vercel.app/chef-recipe"),
             },
@@ -33,7 +38,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/recipes/:id",
-                element: <ChefRecipes />,
+                element: <PrivateRoute> <ChefRecipes /> </PrivateRoute>,
                 loader: async ({ params }) => fetch(`https://chef-recipe-hunter-server-side-topaz.vercel.app/chef-recipe/${params.id}`)
             }
         ]

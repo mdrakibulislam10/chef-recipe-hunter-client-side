@@ -1,0 +1,5 @@
+@media only screen and (min-width: 577px) {
+    .custom-book-card-height {
+        height: 600px;
+    }
+}

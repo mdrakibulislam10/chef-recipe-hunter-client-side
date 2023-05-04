@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Rating } from '@smastrom/react-rating'
 import toast, { Toaster } from 'react-hot-toast';
+import "./ChefRecipe.css";
 
 import '@smastrom/react-rating/style.css'
 
@@ -36,7 +37,7 @@ const ChefRecipe = ({ recipe }) => {
                 </div>
                 <hr className='w-75 mx-auto' />
                 <Card.Body>
-                    <div className='d-flex flex-column flex-lg-row justify-content-between align-items-start'>
+                    <div className='d-flex flex-column flex-lg-row justify-content-between align-items-start custom-height-recipe-info'>
                         <div>
                             <h5>Ingredients:</h5>
                             {

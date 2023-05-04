@@ -11,6 +11,7 @@ const Main = () => {
     return (
         <div>
             <Header />
+
             {navigation.state === "loading"
                 ? <Spinner className='mx-auto d-block my-4' animation="border" variant="warning" />
                 : ""}
