@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Chef = ({ chef }) => {
     const { id, chef_picture, chef_name, years_of_experience, numbers_of_recipes, likes } = chef;
@@ -12,7 +13,9 @@ const Chef = ({ chef }) => {
     return (
         <div className='p-2'>
             <Card className='pt-4 pb-2 shadow border-0'>
-                <Card.Img className='rounded-circle mx-auto img-fluid' variant="top" src={chef_picture} style={{ height: "200px", width: "200px" }} />
+                <LazyLoadImage
+                    className='rounded-circle mx-auto img-fluid' variant="top" src={chef_picture} style={{ height: "200px", width: "200px" }}
+                />
                 <Card.Body>
                     <Card.Title className='text-center mb-5'><b>{chef_name}</b></Card.Title>
                     <div>

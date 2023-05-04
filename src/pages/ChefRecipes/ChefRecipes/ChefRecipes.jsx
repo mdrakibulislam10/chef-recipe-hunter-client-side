@@ -3,6 +3,8 @@ import ChefRecipe from '../ChefRecipe/ChefRecipe';
 import { Col, Row } from 'react-bootstrap';
 import "./ChefRecipes.css";
 import { FaThumbsUp } from 'react-icons/fa';
+// import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefRecipes = () => {
     const chef = useLoaderData();
@@ -28,7 +30,13 @@ const ChefRecipes = () => {
                     </Col>
 
                     <Col>
-                        <img className='img-fluid rounded-circle mx-auto d-block custom-chef-img-size' src={chef_picture} alt="" />
+                        {/* <LazyLoad offset={300} threshold={0.95}>
+                            <img className='img-fluid rounded-circle mx-auto d-block custom-chef-img-size' src={chef_picture} alt="" />
+                        </LazyLoad> */}
+
+                        <LazyLoadImage
+                            className='img-fluid rounded-circle mx-auto d-block custom-chef-img-size' src={chef_picture} alt=""
+                        />
                     </Col>
                 </Row>
 
