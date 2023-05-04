@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Rating } from '@smastrom/react-rating'
+import toast, { Toaster } from 'react-hot-toast';
 
 import '@smastrom/react-rating/style.css'
 
 const ChefRecipe = ({ recipe }) => {
     const { recipe_name, recipe_picture, ingredients, cooking_method, rating, } = recipe;
     // console.log(recipe);
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const handleToast = (disabled) => {
+        toast("Recipe added favorite list!");
+        setIsDisabled(disabled);
+    };
 
     return (
         <div className='p-2'>
@@ -23,7 +30,8 @@ const ChefRecipe = ({ recipe }) => {
                             <b>{rating}</b>
                         </p>
 
-                        <p className='btn btn-warning' style={{ fontWeight: "500" }}>Favorite</p>
+                        <button onClick={() => handleToast(true)} className='btn btn-warning' disabled={isDisabled} style={{ fontWeight: "500" }}>Favorite</button>
+                        <Toaster />
                     </div>
                 </div>
                 <hr className='w-75 mx-auto' />
