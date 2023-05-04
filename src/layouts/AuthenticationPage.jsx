@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Header from '../pages/shared/Header/Header';
+import Footer from '../pages/shared/Footer/Footer';
 
 const AuthenticationPage = () => {
     return (
         <div>
-            <Link to={"/"}><button className='btn btn-warning fw-semibold m-3'>Back To Home Page</button></Link>
+            <Header />
 
             <Outlet />
+
+            <Footer />
         </div>
     );
 };

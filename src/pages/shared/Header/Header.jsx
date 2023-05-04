@@ -11,7 +11,7 @@ import { Tooltip } from 'react-tooltip';
 const Header = () => {
     const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext);
-    console.log(user && user);
+    // console.log(user && user);
 
     // handle log out
     const handleLogOut = () => {
