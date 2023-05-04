@@ -3,8 +3,8 @@ import { Card } from 'react-bootstrap';
 import { Rating } from '@smastrom/react-rating'
 import toast, { Toaster } from 'react-hot-toast';
 import "./ChefRecipe.css";
-
 import '@smastrom/react-rating/style.css'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefRecipe = ({ recipe }) => {
     const { recipe_name, recipe_picture, ingredients, cooking_method, rating, } = recipe;
@@ -20,7 +20,9 @@ const ChefRecipe = ({ recipe }) => {
         <div className='p-2'>
             <Card className=''>
                 <div className='p-2 position-relative'>
-                    <Card.Img className='rounded-lg img-fluid' variant="top" src={recipe_picture} style={{ height: "400px" }} />
+                    <LazyLoadImage
+                        className='rounded-lg img-fluid w-100' variant="top" src={recipe_picture} style={{ height: "400px" }}
+                    />
                     <Card.Title className='text-center bg-white rounded p-4 me-4 mb-4 fs-2 position-absolute bottom-0 end-0'><b>{recipe_name}</b></Card.Title>
                 </div>
                 <div className='px-2'>

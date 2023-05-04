@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import "./BookRecommend.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const BookRecommend = ({ book }) => {
     const { book_img, book_name, sold_worldwide, rating } = book;
@@ -9,7 +10,9 @@ const BookRecommend = ({ book }) => {
         <div>
             <Card className='custom-book-card-height'>
                 <div className='p-3'>
-                    <Card.Img className='mx-auto img-fluid rounded' variant="top" src={book_img} style={{ height: "400px" }} />
+                    <LazyLoadImage
+                        className='mx-auto img-fluid rounded w-100' variant="top" src={book_img} style={{ height: "400px" }}
+                    />
                 </div>
 
                 <div className='d-flex flex-column align-items-stretch'>

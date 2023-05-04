@@ -35,7 +35,7 @@ const Header = () => {
                     {
                         user
                             ? <>
-                                <Image data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} style={{ height: "35px", width: "35px" }} src={user?.photoURL} roundedCircle />
+                                <Image data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName && user?.displayName} style={{ height: "35px", width: "35px" }} src={user?.photoURL && user?.photoURL} roundedCircle />
                                 <Tooltip id="my-tooltip" />
 
                                 <span onClick={handleLogOut} title='Sign-out' style={{ cursor: "pointer" }} className='fw-bold'>

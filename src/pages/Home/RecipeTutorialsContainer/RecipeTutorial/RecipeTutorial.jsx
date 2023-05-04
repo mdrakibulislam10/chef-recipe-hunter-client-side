@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { FaStickyNote } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const RecipeTutorial = ({ tutorial }) => {
     const { recipe_name, recipe_img, recipe_tutorial } = tutorial;
@@ -12,7 +13,9 @@ const RecipeTutorial = ({ tutorial }) => {
         <div className=''>
             <Card className=''>
                 <div className='p-2'>
-                    <Card.Img className='mx-auto img-fluid rounded' variant="top" src={recipe_img} style={{ height: "200px" }} />
+                    <LazyLoadImage
+                        className='mx-auto img-fluid rounded w-100' variant="top" src={recipe_img} style={{ height: "200px" }}
+                    />
                 </div>
 
                 <Card.Body className='d-flex flex-wrap align-items-center justify-content-between'>
