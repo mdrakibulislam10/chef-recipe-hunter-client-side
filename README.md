@@ -1,5 +1,5 @@
 ## > Website URL:
-### 🔗 https://chef-recipe-hunter-clien-c7937.web.app/
+### 🔗 https://chef-recipe-hunter-clien-c7937.web.app/home
 
 
 ## > Features and about this website:
