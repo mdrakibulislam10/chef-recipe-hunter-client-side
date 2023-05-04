@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
     const { signUp } = useContext(AuthContext);
@@ -20,6 +21,8 @@ const SignUp = () => {
         signUp(email, password)
             .then(result => {
                 console.log(result.user);
+                updateUserProfile(result.user, name, image);
+
                 form.reset();
                 swal("Sign-up Successful", "Thanks for connect with us", "success");
             })
@@ -32,6 +35,19 @@ const SignUp = () => {
                     // buttons: true,
                     dangerMode: true,
                 })
+            });
+    };
+
+    // update user profile
+    const updateUserProfile = (user, name, image) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL: image
+        })
+            .then(() => {
+                // console.log();
+            }).catch(err => {
+                // console.log(err.message);
             });
     };
 
