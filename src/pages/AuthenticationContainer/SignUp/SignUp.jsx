@@ -16,15 +16,15 @@ const SignUp = () => {
         const password = form.password.value;
         // console.log(email, password);
 
-        // sign up handle
+        // sign up
         signUp(email, password)
             .then(result => {
                 console.log(result.user);
+                form.reset();
             })
             .catch(err => {
                 console.log(err.message);
             });
-
     };
 
     return (

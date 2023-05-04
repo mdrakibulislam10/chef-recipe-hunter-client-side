@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import "./Login.css";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -12,6 +14,16 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        // sign in
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                form.reset();
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
     };
 
     return (
