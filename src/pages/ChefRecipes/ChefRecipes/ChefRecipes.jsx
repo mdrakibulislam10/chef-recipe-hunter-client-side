@@ -18,20 +18,20 @@ const ChefRecipes = () => {
             {/* chef's banner */}
             <div className='bg-primary mt-4'>
                 <Row xs={1} lg={2} className='py-5 container mx-auto align-items-center gy-4 lg-g-3'>
-                    <Col className='text-white border-start border-2'>
+                    <Col className='text-white border-start border-2 order-2 order-lg-1'>
                         <h1 className='text-warning'><b>{chef_name}</b></h1>
                         <h4>{profession}</h4>
                         <hr className='w-75 border border-2 border-white' />
                         <h6 className='mb-3'>Bio: {short_bio}</h6>
                         <h6 className='d-flex align-items-center'>
                             <span className='me-2'>Likes: {totalLikes}</span>
-                            <FaThumbsUp onClick={() => setTotalLikes(totalLikes + 1)} className='fs-5' style={{ cursor: "pointer" }} />
+                            <FaThumbsUp onClick={() => setTotalLikes(parseInt(totalLikes) + 1)} className='fs-5' style={{ cursor: "pointer" }} />
                         </h6>
                         <h6>Total Recipe: {numbers_of_recipes}</h6>
                         <h6>Experience: {years_of_experience} year</h6>
                     </Col>
 
-                    <Col>
+                    <Col className='order-1 order-lg-2'>
                         {/* <LazyLoad offset={300} threshold={0.95}>
                             <img className='img-fluid rounded-circle mx-auto d-block custom-chef-img-size' src={chef_picture} alt="" />
                         </LazyLoad> */}
