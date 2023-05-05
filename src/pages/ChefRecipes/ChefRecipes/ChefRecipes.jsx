@@ -5,11 +5,13 @@ import "./ChefRecipes.css";
 import { FaThumbsUp } from 'react-icons/fa';
 // import LazyLoad from 'react-lazy-load';
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useState } from 'react';
 
 const ChefRecipes = () => {
     const chef = useLoaderData();
     // console.log(chef.recipe_info);
     const { recipe_info, chef_picture, chef_name, short_bio, years_of_experience, numbers_of_recipes, likes, profession } = chef;
+    const [totalLikes, setTotalLikes] = useState(likes);
 
     return (
         <section>
@@ -22,8 +24,8 @@ const ChefRecipes = () => {
                         <hr className='w-75 border border-2 border-white' />
                         <h6 className='mb-3'>Bio: {short_bio}</h6>
                         <h6 className='d-flex align-items-center'>
-                            <span className='me-2'>Likes: {likes}</span>
-                            <FaThumbsUp className='fs-5' style={{ cursor: "pointer" }} />
+                            <span className='me-2'>Likes: {totalLikes}</span>
+                            <FaThumbsUp onClick={() => setTotalLikes(totalLikes + 1)} className='fs-5' style={{ cursor: "pointer" }} />
                         </h6>
                         <h6>Total Recipe: {numbers_of_recipes}</h6>
                         <h6>Experience: {years_of_experience} year</h6>
