@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Header from '../pages/shared/Header/Header';
 import { Outlet, useLocation, useNavigation } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
-
+import Footer from "../pages/shared/Footer/Footer";
 
 const RecipesPage = () => {
     const location = useLocation();
@@ -31,6 +31,8 @@ const RecipesPage = () => {
                 : ""}
 
             <Outlet />
+
+            <Footer />
         </section>
     );
 };
