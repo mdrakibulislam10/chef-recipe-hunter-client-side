@@ -10,7 +10,7 @@ const RecipeTutorial = ({ tutorial }) => {
     const [isTruthy, setIsTruthy] = useState(false);
 
     return (
-        <div className=''>
+        <div className='' data-aos="fade-up" data-aos-duration="1000">
             <Card className=''>
                 <div className='p-2'>
                     <LazyLoadImage

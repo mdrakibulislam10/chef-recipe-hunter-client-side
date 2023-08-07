@@ -11,7 +11,7 @@ const Chef = ({ chef }) => {
     const navigate = useNavigate();
 
     return (
-        <div className='p-2'>
+        <div className='p-2' data-aos="fade-up" data-aos-duration="1000">
             <Card className='pt-4 pb-2 shadow border-0'>
                 <LazyLoadImage
                     className='rounded-circle mx-auto img-fluid' variant="top" src={chef_picture} style={{ height: "200px", width: "200px" }}

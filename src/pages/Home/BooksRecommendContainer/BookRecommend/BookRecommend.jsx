@@ -7,7 +7,7 @@ const BookRecommend = ({ book }) => {
     const { book_img, book_name, sold_worldwide, rating } = book;
 
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
             <Card className='custom-book-card-height'>
                 <div className='p-3'>
                     <LazyLoadImage

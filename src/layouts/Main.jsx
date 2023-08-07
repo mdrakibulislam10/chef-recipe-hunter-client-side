@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../pages/shared/Header/Header';
 import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from "../pages/shared/Footer/Footer";
 import { Spinner } from 'react-bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Main = () => {
-
     const navigation = useNavigation();
+
+    useEffect(() => {
+        AOS.init();
+    });
 
     return (
         <div>
