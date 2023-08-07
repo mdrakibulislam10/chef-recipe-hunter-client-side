@@ -7,6 +7,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import swal from 'sweetalert';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
+import logo from "../../../../public/favicon-chef.png";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -24,9 +25,12 @@ const Header = () => {
     };
 
     return (
-        <header className='mb-5 mt-4'>
-            <Navbar bg="" variant="" className='d-flex flex-column flex-md-row justify-content-around align-items-center'>
-                <h1 onClick={() => navigate("/")} className='text-info fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
+        <header className='mb-4 mt-4'>
+            <Navbar bg="" variant="" className='d-flex flex-column flex-md-row justify-content-between mx-1 mx-md-5 align-items-center'>
+                <div className='d-flex align-items-center gap-2'>
+                    <img onClick={() => navigate("/")} className='' width={"70px"} height={"70px"} style={{ cursor: "pointer" }} src={logo} alt="" />
+                    <h1 onClick={() => navigate("/")} className='text-info fw-bold' style={{ cursor: "pointer" }}>Recipe Haven</h1>
+                </div>
 
                 <Nav className="d-flex gap-3 gap-md-5 align-items-center justify-content-center fw-bold flex-wrap">
                     {/* replace slash(/) route with /home route for Link Active */}
